@@ -1,0 +1,55 @@
+{
+  "name": "react-17-examples",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "jsx-transform": "npx react-codemod update-react-imports 'src/**/*.{js,jsx}' --force",
+    "prettier": "npx prettier --write 'src/**/*.{js,jsx}' .prettierrc.js .eslintrc.js",
+    "eslint": "npx eslint --fix --cache --max-warnings=0 'src/**/*.{js,jsx}'",
+    "format": "npm run eslint && npm run prettier",
+    "prepare": "husky install"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^12.3.3",
+    "prettier": "^2.5.1"
+  },
+  "lint-staged": {
+    "*.js?(x)": "npm run format"
+  }
+}
